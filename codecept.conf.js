@@ -7,7 +7,7 @@ exports.config = {
       show: true,
       restart: false,
       waitForNavigation: "networkidle0",
-      waitForAction: 3000
+      waitForAction: 1000
     }
   },
   include: {
