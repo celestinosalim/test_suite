@@ -1,5 +1,5 @@
 Feature("Sign In Test Bad Credentials");
-
+let button = locate(".btn-link");
 let signIn = locate("a").withAttr({ href: "/login" });
 let submit = locate("input").withAttr({ name: "commit" });
 Scenario(
