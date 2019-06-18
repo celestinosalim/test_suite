@@ -15,7 +15,23 @@
 //   }
 // );
 
-Feature("Forgot Password");
+// Feature("Forgot Password Good Email");
+// let button = locate("input").withAttr({ name: "commit" });
+// let forgot = locate("a.label-link");
+// let input = locate("input#email_field");
+// Scenario("Verify the ‘Forgot Password’ functionality.", async I => {
+//   await I.amOnPage(
+//     "https://github.com/login?return_to=%2Fjoin%3Fsource%3Dheader-home"
+//   );
+//   await I.click(forgot);
+//   await I.fillField(input, "helloworld@gmail.com");
+//   await I.click(button);
+//   await I.see(
+//     "Check your email for a link to reset your password. If it doesn’t appear within a few minutes, check your spam folder."
+//   );
+// });
+
+Feature("Forgot Password Bad Email");
 let button = locate("input").withAttr({ name: "commit" });
 let forgot = locate("a.label-link");
 let input = locate("input#email_field");
@@ -24,9 +40,7 @@ Scenario("Verify the ‘Forgot Password’ functionality.", async I => {
     "https://github.com/login?return_to=%2Fjoin%3Fsource%3Dheader-home"
   );
   await I.click(forgot);
-  await I.fillField(input, "helloworld@gmail.com");
+  await I.fillField(input, "lalalala@alalal.com");
   await I.click(button);
-  await I.see(
-    "Check your email for a link to reset your password. If it doesn’t appear within a few minutes, check your spam folder."
-  );
+  await I.see("Can't find that email, sorry.", ".flash-error");
 });
